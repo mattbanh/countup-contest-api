@@ -59,9 +59,9 @@ const delEntries = async (req, res) => {
   try {
     await connectToDatabase();
     let result = await entriesCollection.deleteOne({
-      _id: ObjectId(req.body.id),
+      _id: ObjectId(req.params.id),
     });
-    res.status(200).json({ message: `Deleted entry with id ${req.body.id}` });
+    res.status(200).json({ message: `Deleted entry with id ${req.params.id}` });
   } catch (err) {
     console.error(`Error deleting entry: ${err}`);
   } finally {
