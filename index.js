@@ -15,6 +15,8 @@ app.use(
   })
 );
 
+app.use("/", require("./routes/apiRoute"));
+
 app.use("/entries", require("./routes/entriesRoute"));
 
 // override express errorhandling message
